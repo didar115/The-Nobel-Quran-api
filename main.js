@@ -38,6 +38,8 @@ const getApiData = () => {
 }
 getApiData();
 
+
+
 //  showSearchData called for collecting the data from the api 
 // "Books" used for collecting search result item [it's genaraly gather 100 items]
 // "searchText" used for displaying which data are showing written in text like: 'laravel' s 100 result found
@@ -55,10 +57,13 @@ const showSearchData = (books) => {
 	
 		const newDiv = document.createElement("div");
 		newDiv.classList.add("col");
+		const surahId = element.id;
+		const surahName = element.name_arabic;
+		const surahNameEng = element.translated_name.name;
 
 		// ==============Creating show items innerHTML design =============;
 		newDiv.innerHTML = `
-            <div class="custom-card" onclick="getSurahDetails('${element.id}','${element.name_simple}','${element.translated_name.name}')" >
+            <div class="custom-card" onclick='getSurahDetails("${surahId}","${surahName}","${surahNameEng}")'>
                 <div class="card-body d-flex justify-content-around align-items-center">
 							
 				   		 <div class="col-2" id="surah-id"><h5 class="card-title text-light text-center mt-2" >${element.id}</h5></div>
@@ -85,7 +90,7 @@ const showSearchData = (books) => {
 	
 }
 
-const getSurahDetails = (id, name,eng_name) => {
+const getSurahDetails = (id,name,eng_name) => {
 	console.log("hello", id);
 		url = `https://api.quran.com/api/v4/quran/verses/uthmani?chapter_number=${id}`;
 		fetch(url)
@@ -97,7 +102,7 @@ const getSurahDetails = (id, name,eng_name) => {
 const getSurahText = (text,id,name,eng_name) => {
 	
 	console.log(text);
-	console.log(name);
+	console.log(eng_name);
 	showItems.innerHTML = "";
 	const header = document.getElementById('header');
 	header.classList.add("d-none");
@@ -120,12 +125,14 @@ const getSurahText = (text,id,name,eng_name) => {
 
 		const newDiv=document.createElement("div");
 		newDiv.innerHTML = `
-		
+		<div class=" d-flex justify-content-between">
+		<h6 class="text-light text-end"> ${element.verse_key}</h6>
 		<h1 class="text-light text-end"> ${element.text_uthmani}</h1>
+		</div>
+
 		<hr style="color:white; height:1px">
 		`;
 		showItems.appendChild(newDiv);
 	});
-	
 	
 }
