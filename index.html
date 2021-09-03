@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Nobel Quran</title>
+</head>
+<body>
+
+   <header id="header">
+       <div class="d-flex justify-content-center pt-4">
+        <img src="images/quran-logo.webp" width="315px" alt="" >
+       </div>
+    
+       
+       <h1 class="text-center p-4 text-light fw-bold">The Nobel Quran</h1>
+        <div class="container d-flex justify-content-center w-50 pb-3">
+                <!-- search input field  -->
+                <input id="search-field" type="text" class="form-control" placeholder="Search a surah" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <!-- search button  -->
+                <button id="search-btn" class="btn btn-danger" type="button" id="button-addon2">Search</button>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- body section where search item will show -->
+    <main>
+        <div class="container" id="display">
+             <!-- spinner  -->
+            <div class=" d-flex justify-content-center">
+                <div id="loading-spinner" class="spinner-border d-none text-danger mb-3" role="status">
+                 <span class="visually-hidden">
+                     <!-- <h5 class="card-title text-light" id="surah-id">${element.id}</h5>
+					
+					<div class="d-flex justify-content-start">
+					<div>
+					<h5 class="card-title text-light fw-bold">${element.name_simple}</h5>
+					<small class="text-light">${element.translated_name.name}</small>
+					</div>
+					</div>
+                    
+                    <h6 class="card-title text-danger fs-3" id="arabic-name">${element.name_arabic}</h6> -->
+                   
+
+                 </span>
+                </div>
+            </div>
+
+            <!-- result count show here -->
+            <div id="count-result" ></div>
+           
+            <!-- result items show here  -->
+            <div class="row g-2" id="show-items">
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="main.js"></script>
+</body>
+</html>
