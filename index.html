@@ -16,50 +16,26 @@
 
    <header id="header">
        <div class="d-flex justify-content-center pt-4">
-        <img src="images/quran-logo.webp" width="315px" alt="" >
+        <img src="images/quran-logo.webp" width="315px" alt="logo" >
        </div>
     
        
-       <h1 class="text-center p-4 text-light fw-bold">The Nobel Quran</h1>
+            <h1 class="text-center p-4 text-light fw-bold">The Nobel Quran</h1>
         <div class="container d-flex justify-content-center w-50 pb-3">
                 <!-- search input field  -->
                 <input id="search-field" type="text" class="form-control" placeholder="Search a surah" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <!-- search button  -->
                 <button id="search-btn" class="btn btn-danger" type="button" id="button-addon2">Search</button>
-            </div>
         </div>
+       
     </header>
-    
 
     <!-- body section where search item will show -->
     <main>
-        <div class="container" id="display">
-             <!-- spinner  -->
-            <div class=" d-flex justify-content-center">
-                <div id="loading-spinner" class="spinner-border d-none text-danger mb-3" role="status">
-                 <span class="visually-hidden">
-                     <!-- <h5 class="card-title text-light" id="surah-id">${element.id}</h5>
-					
-					<div class="d-flex justify-content-start">
-					<div>
-					<h5 class="card-title text-light fw-bold">${element.name_simple}</h5>
-					<small class="text-light">${element.translated_name.name}</small>
-					</div>
-					</div>
-                    
-                    <h6 class="card-title text-danger fs-3" id="arabic-name">${element.name_arabic}</h6> -->
-                   
-
-                 </span>
-                </div>
-            </div>
-
-            <!-- result count show here -->
-            <div id="count-result" ></div>
+        <div class="container pb-5" id="display">
            
             <!-- result items show here  -->
-            <div class="row g-2" id="show-items">
-            </div>
+            <div class="row g-2" id="show-items"></div>
         </div>
     </main>
 
